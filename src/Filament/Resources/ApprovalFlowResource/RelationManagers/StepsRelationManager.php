@@ -10,11 +10,17 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class StepsRelationManager extends RelationManager
 {
     protected static string $relationship = 'steps';
+
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
+    {
+        return __('filament-approvals::approvals.steps_relation_manager_title');
+    }
 
     public function form(Form $form): Form
     {
@@ -23,8 +29,9 @@ class StepsRelationManager extends RelationManager
             ->schema([
                 Select::make("role_id")
                     ->searchable()
-                    ->label("Role")
-                    ->helperText("Who should approve in this step?")
+                    ->label(__('filament-approvals::approvals.steps_form_label.Role'))
+                    ->helperText(__('filament-approvals::approvals.steps_form_label.RoleHelperText'))
+                    // ->helperText("Who should approve in this step?")
                     ->options(fn() => ((string) config('process_approval.roles_model'))::get()
                         ->map(fn ($model) => [
                             "name" => str($model->name)
@@ -36,7 +43,9 @@ class StepsRelationManager extends RelationManager
                     ->columnSpan(6)
                     ->native(false),
                 Select::make("action")
-                    ->helperText("What should be done in this step?")
+                    ->label(__('filament-approvals::approvals.steps_form_label.Action'))
+                    ->helperText(__('filament-approvals::approvals.steps_form_label.ActionHelperText'))
+                    // ->helperText("What should be done in this step?")
                     ->native(false)
                     ->default("APPROVE")
                     ->columnSpan(4)
@@ -46,7 +55,7 @@ class StepsRelationManager extends RelationManager
                         'CHECK' => __('filament-approvals::approvals.actions.check'),
                     ]),
                 TextInput::make('order')
-                    ->label('Order')
+                    ->label(__('filament-approvals::approvals.steps_form_label.Order'))
                     ->type('number')
                     ->columnSpan(2)
                     ->default(fn($livewire) => $livewire->ownerRecord->steps->count() + 1)
@@ -60,9 +69,12 @@ class StepsRelationManager extends RelationManager
             ->reorderable("order")
             ->defaultSort('order', 'asc')
             ->columns([
-                Tables\Columns\TextColumn::make('order')->label('Order'),
-                Tables\Columns\TextColumn::make('role.name'),
-                Tables\Columns\TextColumn::make('action'),
+                Tables\Columns\TextColumn::make('order')
+                    ->label(__('filament-approvals::approvals.steps_form_label.Order')),
+                Tables\Columns\TextColumn::make('role.name')
+                    ->label(__('filament-approvals::approvals.steps_form_label.Role')),
+                Tables\Columns\TextColumn::make('action')
+                    ->label(__('filament-approvals::approvals.steps_form_label.Action')),
             ])
             ->filters([
                 //

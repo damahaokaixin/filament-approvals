@@ -2,6 +2,21 @@
 
 // EightyNine/Approval 的翻译
 return [
+    'ModelLabel_Approval_Flow'=>'审批工作流',
+    'PluralModelLabel_Approval_Flows'=>'审批工作流',
+    'steps_relation_manager_title'=>'审批步骤',
+
+    'form_label' => [
+        'name' => '审批流名称',
+        'approvable_type' => '审批流类型',
+    ],
+    'steps_form_label' => [
+        'Order' => '排序序号',
+        'Role' => '用户组角色',
+        'Action' => '执行操作',
+        'RoleHelperText' => '这一步谁来审批?',
+        'ActionHelperText' => '这一步应该做什么?',
+    ],
     'status_column' => [
         'Approved' => '已批准',
         'Rejected' => '已拒绝',

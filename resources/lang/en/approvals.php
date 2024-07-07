@@ -2,6 +2,23 @@
 
 // translations for EightyNine/Approval
 return [
+
+    'ModelLabel_Approval_Flow'=>'Approval flow',
+    'PluralModelLabel_Approval_Flows'=>'Approval flows',
+    'steps_relation_manager_title'=>'Steps',
+
+    'form_label' => [
+        'name' => 'name',
+        'approvable_type' => 'approvable_type',
+    ],
+    'steps_form_label' => [
+        'Order' => 'Order',
+        'Role' => 'Role',
+        'Action' => 'Action',
+        'RoleHelperText' => 'Who should approve in this step?',
+        'ActionHelperText' => 'What should be done in this step?',
+    ],
+
     'status_column' => [
         'Approved' => 'Approved',
         'Rejected' => 'Rejected',

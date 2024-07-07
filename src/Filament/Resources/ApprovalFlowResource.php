@@ -23,6 +23,8 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RingleSoft\LaravelProcessApproval\Models\ProcessApprovalFlow;
 
+use function Filament\Support\get_model_label;
+
 class ApprovalFlowResource extends Resource
 {
     protected static ?string $model = ProcessApprovalFlow::class;
@@ -30,6 +32,17 @@ class ApprovalFlowResource extends Resource
     protected static ?string $modelLabel = 'Approval flow';
 
     protected static ?string $pluralModelLabel = 'Approval flows';
+
+    public static function getModelLabel(): string
+    {
+        return __('filament-approvals::approvals.ModelLabel_Approval_Flow');
+    }
+
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament-approvals::approvals.PluralModelLabel_Approval_Flows');
+    }
 
     public static function getNavigationIcon(): ?string
     {
@@ -68,9 +81,11 @@ class ApprovalFlowResource extends Resource
             ->columns(12)
             ->schema([
                 TextInput::make("name")
+                    ->label(__('filament-approvals::approvals.form_label.name'))
                     ->columnSpan(fn($context) => $context === 'create' ? 12 : 6)
                     ->required(),
                 Select::make('approvable_type')
+                    ->label(__('filament-approvals::approvals.form_label.approvable_type'))
                     ->columnSpan(fn($context) => $context === 'create' ? 12 : 6)
                     ->options(function() use ($models) {
                         // remove 'App\Models\' from the value of models
