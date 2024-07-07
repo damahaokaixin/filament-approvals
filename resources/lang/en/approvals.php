@@ -3,6 +3,11 @@
 // translations for EightyNine/Approval
 return [
     'status_column' => [
+        'Approved' => 'Approved',
+        'Rejected' => 'Rejected',
+        'Discarded' => 'Discarded',
+        'Submitted' => 'Submitted',
+
         'approval_by_prefix' => 'By',
         'approval_complete' => 'Complete',
         'approval_incomplete' => 'Incomplete',
