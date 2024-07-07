@@ -2,6 +2,21 @@
 
 ## 这是新增了语言为中文的版本, 可能不会跟随主版本进行更新.
 
+```
+composer:
+
+"damahaokaixin/filament-approvals":"3.x-dev",
+
+"repositories": [
+    {
+    "type": "vcs",
+    "url": "https://github.com/damahaokaixin/filament-approvals.git"
+    }
+]
+
+```
+
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/eightynine/filament-approvals.svg?style=flat-square)](https://packagist.org/packages/eightynine/filament-approvals)
 [![Total Downloads](https://img.shields.io/packagist/dt/eightynine/filament-approvals.svg?style=flat-square)](https://packagist.org/packages/eightynine/filament-approvals)
 
