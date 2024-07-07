@@ -6,6 +6,12 @@ return [
     'PluralModelLabel_Approval_Flows'=>'审批工作流',
     'steps_relation_manager_title'=>'审批步骤',
 
+
+    'Approved' => '已批准',
+    'Rejected' => '已拒绝',
+    'Discarded' => '已丢弃',
+    'Submitted' => '已提交',
+
     'form_label' => [
         'name' => '审批流名称',
         'approvable_type' => '审批流类型',

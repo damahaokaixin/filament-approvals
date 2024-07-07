@@ -7,6 +7,12 @@ return [
     'PluralModelLabel_Approval_Flows'=>'Approval flows',
     'steps_relation_manager_title'=>'Steps',
 
+
+    'Approved' => 'Approved',
+    'Rejected' => 'Rejected',
+    'Discarded' => 'Discarded',
+    'Submitted' => 'Submitted',
+
     'form_label' => [
         'name' => 'name',
         'approvable_type' => 'approvable_type',
