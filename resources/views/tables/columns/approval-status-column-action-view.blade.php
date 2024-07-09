@@ -11,8 +11,8 @@
                 <div class="flex gap-x-4 ml-auto">
                     <span class="px-3 py-1 bg-red-500 text-gray-800 rounded-full text-xs
                     @if($a->approval_action == 'Approved') bg-success-400 text-green-800 @endif
-                    @if($a->approval_action == 'Rejected') bg-danger-400 text-white @endif
-                    @if($a->approval_action == 'Discarded') bg-danger-400 text-white @endif
+                    @if($a->approval_action == 'Rejected') bg-danger-400 text-gray-400 @endif
+                    @if($a->approval_action == 'Discarded') bg-danger-400 text-gray-400 @endif
                     @if($a->approval_action == 'Pending') bg-warning-400 text-yellow-800 @endif
                     @if($a->approval_action == 'Submitted') bg-warning-400 text-yellow-800 @endif
                     ">
